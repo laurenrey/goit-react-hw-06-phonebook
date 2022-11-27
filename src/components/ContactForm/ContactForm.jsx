@@ -37,7 +37,9 @@ export const ContactForm = () => {
       number,
       id: nanoid(),
     };
-    const checkContact = contacts.some(contact => contact.name === name);
+    const checkContact = contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
 
     checkContact
       ? toast.error(`${name} is already in contacts.`)
